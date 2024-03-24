@@ -25,7 +25,7 @@ jobs:
               with: 
                 file: ./Dockerfile
                 push: true
-                tags: ${{ secrets.DOCKER_USERNAME }}/MyImageName:latest
+                tags: ${{ secrets.DOCKER_USERNAME }}/myimagename:latest
     deployment:
       needs: build
       environment: staging
