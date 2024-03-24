@@ -26,12 +26,11 @@ jobs:
                 file: ./Dockerfile
                 push: true
                 tags: ${{ secrets.DOCKER_USERNAME }}/MyImageName:latest
-
-deployment:
-    needs: build
-    environment: staging
-    runs-on: ubuntu-latest
-    steps:
+    deployment:
+      needs: build
+      environment: staging
+      runs-on: ubuntu-latest
+      steps:
         - name: Deploy to VPS
           uses: appleboy/ssh-action@master
           with:
