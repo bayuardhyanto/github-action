@@ -39,7 +39,7 @@ jobs:
             password: ${{ secrets.SERVER_PASSWORD }}
             port: ${{ secrets.SERVER_PORT }}
             script:
-                sudo docker stop My-Hello-World || true && docker rm My-Hello-World || true ||
+                sudo docker stop My-Hello-World || true && sudo docker rm My-Hello-World || true ||
                 sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p  ${{ secrets.DOCKER_TOKEN }} ||
                 sudo docker pull ${{ vars.IMAGE_NAME }} ||
                 sudo docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ vars.IMAGE_NAME }}
