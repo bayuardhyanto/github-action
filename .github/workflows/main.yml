@@ -43,7 +43,7 @@ jobs:
                 #sudo su
                 #sudo docker stop My-Hello-World || true && docker rm My-Hello-World || true
                 #echo "Next..."
-                sudo docker login -u dockercelepuk -p  ${{ secrets.DOCKER_TOKEN }}
+                sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p  ${{ secrets.DOCKER_TOKEN }}
                 sudo docker pull ${{ vars.IMAGE_NAME }}
                 #echo "Next."
                 #sudo docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ vars.IMAGE_NAME }}
