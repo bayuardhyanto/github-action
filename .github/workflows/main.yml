@@ -40,6 +40,7 @@ jobs:
             port: ${{ secrets.SERVER_PORT }}
             script:
                 #pwd && whoami && sudo whoami && ls
+                sudo su
                 sudo docker stop My-Hello-World || true && docker rm My-Hello-World || true
                 echo "Next..."
                 sudo docker pull ${{ vars.IMAGE_NAME }}
