@@ -39,7 +39,9 @@ jobs:
             password: ${{ secrets.SERVER_PASSWORD }}
             port: ${{ secrets.SERVER_PORT }}
             script:
+                pwd
                 whoami
-                docker stop My-Hello-World || true && docker rm My-Hello-World || true
-                docker pull ${{ vars.IMAGE_NAME }}
-                docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ vars.IMAGE_NAME }}
+                sudo whoami
+                sudo docker stop My-Hello-World || true && docker rm My-Hello-World || true
+                sudo docker pull ${{ vars.IMAGE_NAME }}
+                sudo docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ vars.IMAGE_NAME }}
