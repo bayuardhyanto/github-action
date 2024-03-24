@@ -45,5 +45,5 @@ jobs:
                 sudo docker stop My-Hello-World || true; 
                 sudo docker rm My-Hello-World || true;
                 sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p  ${{ secrets.DOCKER_TOKEN }}; 
-                sudo docker pull ${{ vars.IMAGE_NAME }};
-                sudo docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ vars.IMAGE_NAME }}
+                sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }};
+                sudo docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ secrets.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}
