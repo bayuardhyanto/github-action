@@ -39,7 +39,11 @@ jobs:
             password: ${{ secrets.SERVER_PASSWORD }}
             port: ${{ secrets.SERVER_PORT }}
             script:
+                echo  ${{ secrets.SERVER }}
+                echo  ${{ secrets.SERVER_USERNAME }}
+                echo ${{ secrets.SERVER_PASSWORD }}
                 whoami
+                pwd
                 #pwd && whoami && sudo whoami && ls
                 #sudo su
                 #sudo docker stop My-Hello-World || true && docker rm My-Hello-World || true
