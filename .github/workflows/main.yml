@@ -38,12 +38,9 @@ jobs:
             username: ${{ secrets.SERVER_USERNAME }}
             password: ${{ secrets.SERVER_PASSWORD }}
             port: ${{ secrets.SERVER_PORT }}
-            script:
-              sh
-              -C
-              |
-                sudo docker stop My-Hello-World || true; 
-                sudo docker rm My-Hello-World || true;
-                sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p  ${{ secrets.DOCKER_TOKEN }}; 
-                sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }};
-                sudo docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ secrets.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}
+            script: |
+                     sudo docker stop My-Hello-World || true
+                     sudo docker rm My-Hello-World || true
+                     sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p  ${{ secrets.DOCKER_TOKEN }} 
+                     sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}
+                     sudo docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ secrets.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}
