@@ -39,15 +39,10 @@ jobs:
             password: ${{ secrets.SERVER_PASSWORD }}
             port: ${{ secrets.SERVER_PORT }}
             script:
-                echo  ${{ secrets.SERVER }}
-                echo  ${{ secrets.SERVER_USERNAME }}
-                echo ${{ secrets.SERVER_PASSWORD }}
-                whoami
-                pwd
                 #pwd && whoami && sudo whoami && ls
                 #sudo su
                 #sudo docker stop My-Hello-World || true && docker rm My-Hello-World || true
                 #echo "Next..."
-                #sudo docker pull ${{ vars.IMAGE_NAME }}
+                sudo docker pull ${{ vars.IMAGE_NAME }}
                 #echo "Next."
                 #sudo docker run -d -p 123:123 --name ${{ vars.CONTAINER_NAME }} ${{ vars.IMAGE_NAME }}
